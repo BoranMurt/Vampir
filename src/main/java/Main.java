@@ -4,31 +4,27 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
         Players player = new Players();
-        Roles roles = new Roles();
         MatchRoles matchRoles = new MatchRoles();
+        RandomRoles randomRoles = new RandomRoles();
+        DeliRole deliRole = new DeliRole();
+        ArrayList<String> changedRolesList = new ArrayList<>();
 
 
-        roles.setGoodRoles();
-        roles.setBadRoles();
-        roles.setNeutralRoles();
-        ArrayList<String> players = player.setPlayersName();
-        HashMap<String, String> matchRoles1 = matchRoles.setPlayersRoles(players);
-
+        player.setPlayersName();
+        randomRoles.joinAllList();
         System.out.println("*********************************************************");
-        System.out.println(matchRoles1);
-        /*
-        //deli role
-        ArrayList<String> stupidMethod = randomRoles.getRandomRolesList();
-        if(stupidMethod.contains("deli"))
-        {
-        ArrayList<String> finalRoles= deliRole.defineDeliRole();
-        HashMap<String,String> gameRoles1=matchRoles.setFinalRoles(players,finalRoles);
-            System.out.println(gameRoles1);
-        }
 
-        HashMap<String,String> gameRoles=matchRoles.setFinalRoles(players,finalRoles);
-        System.out.println(gameRoles);
-*/
+
+        ArrayList<String> withDeliGoodRoles = randomRoles.getRandomRolesList();
+
+        for (String withDeliGoodRole : withDeliGoodRoles) {
+            String changer = deliRole.chanceDeliRoles(withDeliGoodRole);
+            changedRolesList.add(changer);
+        }
+        HashMap<String, String> matchRoles1 = matchRoles.setPlayersRoles(changedRolesList);
+        System.out.println(matchRoles1);
+
+
     }
 }
 

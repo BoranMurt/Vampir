@@ -7,13 +7,12 @@ public class Main {
         MatchRoles matchRoles = new MatchRoles();
         RandomRoles randomRoles = new RandomRoles();
         DeliRole deliRole = new DeliRole();
+        RoleOrder roleOrder =new RoleOrder();
         ArrayList<String> changedRolesList = new ArrayList<>();
-
 
         player.setPlayersName();
         randomRoles.joinAllList();
         System.out.println("*********************************************************");
-
 
         ArrayList<String> withDeliGoodRoles = randomRoles.getRandomRolesList();
 
@@ -23,6 +22,7 @@ public class Main {
         }
         HashMap<String, String> matchRoles1 = matchRoles.setPlayersRoles(changedRolesList);
         System.out.println(matchRoles1);
+        roleOrder.setRoleOrder();
 
 
     }

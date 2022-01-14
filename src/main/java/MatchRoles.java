@@ -15,5 +15,14 @@ public class MatchRoles {
 
         return matchedList;
     }
+    public HashMap<String,Integer> setPlayerHealth(){
+        HashMap<String, Integer> playerHealth = new HashMap<>();
+        Players players1 = new Players();
+        ArrayList<String> players = players1.getPlayersNameList();
+        for (int i = 0; i < players.size(); i++) {
+            playerHealth.put(players.get(i), 0);
+        }
+        return playerHealth;
+    }
 
 }

@@ -35,7 +35,7 @@ public class Roles {
         ArrayList<String> neutralRoles = new ArrayList<>();
         neutralRoles.add("hırsız");
         neutralRoles.add("bombacı");
-        neutralRoles.add("seri katil");
+        neutralRoles.add("serikatil");
         neutralRoles.add("survivor");
         System.out.println("***********Tarafsız Roller*********");
         for (String neutralRole : neutralRoles) {

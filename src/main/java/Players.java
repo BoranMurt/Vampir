@@ -17,9 +17,9 @@ public class Players {
     }
 
     //Set Players Name
-    public ArrayList<String> setPlayersName(){
+    public void setPlayersName(){
         int players_number=setPlayersNumber();
-        ArrayList<String> players_name = new ArrayList<String>();
+        ArrayList<String> players_name = new ArrayList<>();
         for(int i =0;i<players_number;i++){
             Scanner myObj2 = new Scanner(System.in);
             System.out.println((i+1)+"."+" Oyuncu Adı giriniz:");
@@ -27,15 +27,10 @@ public class Players {
             players_name.add(names);
         }
         System.out.println("Oyuncular:");
-        for (int i = 0; i < players_name.size(); i++) {
-            System.out.println(players_name.get(i));
+        for (String s : players_name) {
+            System.out.println(s);
         }
         playersNameList=players_name;
-        return players_name;
-    }
-
-    public Integer getPlayersNumber(){
-        return playersNumber;
     }
 
     public ArrayList<String> getPlayersNameList(){

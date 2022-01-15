@@ -19,10 +19,9 @@ public class MatchRoles {
         HashMap<String, Integer> playerHealth = new HashMap<>();
         Players players1 = new Players();
         ArrayList<String> players = players1.getPlayersNameList();
-        for (int i = 0; i < players.size(); i++) {
-            playerHealth.put(players.get(i), 0);
+        for (String player : players) {
+            playerHealth.put(player, 0);
         }
         return playerHealth;
     }
-
 }

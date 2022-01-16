@@ -151,7 +151,7 @@ public class Main {
                 }
             }
 
-            if (victimRole.contains(hirsiz)) { //hirsiz
+            if (victimRole.contains(hirsiz)) { //hirsiz !!! Çaldığı rollerde deli yazmayacak!!!
                 if(playerHealth.get(s)>=0){
                     System.out.println(s + "-->" + " Bu akşam birin rolünü çalacak mısın?(evet/hayır)\n(Kullanmak zorunda değilsin):");
                     String response = myObj2.nextLine();
@@ -159,7 +159,7 @@ public class Main {
                         System.out.println(s + "-->" + " Kimin rolünü çalacaksın?:\n"+"Kalan Oyuncular: "+linkedList.keySet());
                         String innocent = myObj2.nextLine();
                         if(playerHealth.get(innocent)<=0){
-                            playerHealth.put(response, playerHealth.get(innocent) - 1);
+                            playerHealth.put(innocent, playerHealth.get(innocent) - 1);
                             linkedList.put(s, linkedList.get(innocent));
                             System.out.println(s + "-->" + " Yeni rolün: "+linkedList.get(s));
                         }
@@ -255,6 +255,9 @@ public class Main {
                         String innocent = myObj2.nextLine();
                         System.out.println(s + "-->" + " Oyuncu " + innocent + " rolünü öğrendi");
                         System.out.println(innocent+" rolü: "+ linkedList.get(innocent));
+                    }
+                    if(victimRole.contains(deli)){
+                        System.out.println("Otur leyn yerine");
                     }
                 }
                 else {

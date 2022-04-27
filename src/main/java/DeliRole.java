@@ -7,7 +7,6 @@ public class DeliRole{
         Roles roles1 = new Roles();
         ArrayList<String> delili= roles1.getGoodRoles2();
         delili.remove("deli");
-        delili.remove("doktor");
         int min = 0;
         int max = delili.size();
         Random random = new Random();

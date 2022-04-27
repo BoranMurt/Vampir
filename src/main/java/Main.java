@@ -36,14 +36,16 @@ public class Main {
         ArrayList<String> playTime= roleOrder1.setRoleOrder();              //Oynanış sırası listesi alındı.
         String deli = "Deli";
         String seriKatil = playTime.get(0);
-        String survivor = playTime.get(1);
-        String buyucu = playTime.get(2);
-        String hirsiz = playTime.get(3);
-        String vampir = playTime.get(4);
-        String avci = playTime.get(5);
-        String bombaci = playTime.get(6);
-        String doktor = playTime.get(7);
-        String ispiyoncu = playTime.get(8);
+        String polis = playTime.get(1);
+        String gozcu = playTime.get(2);
+        String survivor = playTime.get(3);
+        String buyucu = playTime.get(4);
+        String hirsiz = playTime.get(5);
+        String vampir = playTime.get(6);
+        String avci = playTime.get(7);
+        String bombaci = playTime.get(8);
+        String doktor = playTime.get(9);
+        //String ispiyoncu = playTime.get(10);
         HashMap<String,Integer> playerHealth= matchRoles.setPlayerHealth(); //Oyuncuların Health Hashmap'i alındı.
 
         LinkedHashMap<String,String> linkedList= new LinkedHashMap<>();
@@ -51,6 +53,16 @@ public class Main {
 
         for (String t: matchRoles1.keySet()){
             if(matchRoles1.get(t).contains(seriKatil)){
+                linkedList.put(t,matchRoles1.get(t));
+            }
+        }
+        for (String t: matchRoles1.keySet()){
+            if(matchRoles1.get(t).contains(polis)){
+                linkedList.put(t,matchRoles1.get(t));
+            }
+        }
+        for (String t: matchRoles1.keySet()){
+            if(matchRoles1.get(t).contains(gozcu)){
                 linkedList.put(t,matchRoles1.get(t));
             }
         }
@@ -90,11 +102,12 @@ public class Main {
                 linkedList.put(t,matchRoles1.get(t));
             }
         }
+        /*
         for (String t: matchRoles1.keySet()){
             if(matchRoles1.get(t).contains(ispiyoncu)){
                 linkedList.put(t,matchRoles1.get(t));
             }
-        }
+        }*/
         System.out.println("SIRALANMIS LİSTE: "+linkedList);
         ArrayList<String> deliRandomResponse = new ArrayList<>();
         deliRandomResponse.add("Pozitif");
@@ -247,7 +260,7 @@ public class Main {
                 else {
                     System.out.println(s + "-->" + " Her gecenin sabahı olmaz! Ama belki olur beklemen lazım.");
                 }
-            }
+            }/*
             if (victimRole.contains(ispiyoncu)) { //ispiyoncu
                 if(playerHealth.get(s)>=0){
                     if (!victimRole.contains(deli)) {
@@ -264,8 +277,8 @@ public class Main {
                     System.out.println(s + "-->" + " Her gecenin sabahı olmaz! Ama belki olur beklemen lazım.");
                 }
             }
+            */
             System.out.println(playerHealth);
-            //seri katilin öldüğü kişiyi büyücü diriltiyormuş gibi oldu.Düzelt bunu
         }
     }
 }

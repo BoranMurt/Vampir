@@ -7,10 +7,12 @@ public class Roles {
     public ArrayList<String> setGoodRoles() {
         ArrayList<String> goodRoles = new ArrayList<>();
         goodRoles.add("deli");
-        goodRoles.add("ispiyoncu");
+        //goodRoles.add("ispiyoncu");
         goodRoles.add("avcı");
         goodRoles.add("büyücü");
         goodRoles.add("doktor");
+        goodRoles.add("polis");
+        goodRoles.add("gözcü");
         System.out.println("***********İyi roller*********");
         for (String goodRole : goodRoles) {
             System.out.println(goodRole);
